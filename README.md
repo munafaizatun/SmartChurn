@@ -1,43 +1,25 @@
-# SmartChurn — Predicting & Understanding Customer Churn
+# SmartChurn — Discount Impact & Explainable ROI
 
-> *“What if the discounts meant to keep customers actually made them leave?”*  
+> *“Discounts intended to keep customers may actually push them away.”*
 
-SmartChurn predicts which energy customers are likely to churn, explains **why**, and simulates **discount-based retention strategies** (5%, 10%, 20%) to guide data-driven decisions.
+SmartChurn analyzes how retention discounts affect customer churn and revenue using **XGBoost** and **SHAP (explainable AI)**. Instead of blindly offering incentives, it quantifies **who is at risk, why, and how price changes influence loyalty**.
 
+## Key Insights
 
-## Key Impact
+- **All tested discounts (5%, 10%, 20%) increased churn.**  
+- **ROI was negative for all discount levels**, showing that blanket price cuts can hurt revenue.  
+- **Customer perception drives behavior**: SHAP revealed price variance, contract timing, and engagement channels as main factors.  
+- **Targeted retention matters more than discounts**: personalized strategies based on risk and engagement are more effective than uniform offers.
 
-- **3× more churners identified** after threshold tuning  
-- **Optimal discount** (~10%) for retention without harming ROI  
-- Data-driven insights for **personalized retention and engagement**
+## What I Did
 
-## How It Works
+- Predicted churn probabilities with **XGBoost**.  
+- Explained feature importance and discount impact with **SHAP**.  
+- Simulated multiple discount scenarios to evaluate **churn and ROI trade-offs**.  
+- Generated actionable recommendations to **protect revenue and customer trust**.
 
-1. **Predict** churn with XGBoost + SMOTE  
-2. **Explain** predictions using SHAP  
-3. **Simulate** discount effects on churn & ROI  
-4. **Generate** actionable retention strategies
+## Takeaways for Business
 
-## Churn Prediction Results
-
-| Metric | Default Threshold (0.5) | Tuned Threshold (0.24) |
-|--------|--------|-------|
-| Recall (Churners) | 15% | **33%** |
-| Accuracy | 91% | 87% |
-| ROC-AUC | 0.68 | **0.70** |
-
-## What Drives Churn?
-
-- **Contract Origin & Renewal Timing** — biggest churn predictors  
-- **Engagement Channels** — effective for retention  
-- **Price & Margin** — secondary to experience
-
-## Discount Simulation Insights
-
-| Discount | Churn Effect | ROI |
-|----------|-------------|-----|
-| 5% | small reduction | neutral |
-| 10% | **~8.5% reduction** | optimal |
-| 20% | limited | negative |
-
-*Moderate incentives work best; aggressive discounts can **backfire**.*
+1. Discounts are not universally beneficial — they can backfire.  
+2. Engage customers **before contract expiry** and prioritize high-risk segments.  
+3. Use **explainable AI insights** to design stable pricing and retention strategies.
